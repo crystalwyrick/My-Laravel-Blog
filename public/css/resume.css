@@ -1,0 +1,84 @@
+
+.well {
+	background-image: none;
+	background-color: #F8DFC9;
+	width: 600px;	
+	border: black 5px solid;
+	border-radius: 20px;
+}
+
+.collapse_communication{
+	background-color: #F8DFC9;
+	background-image: none;
+	text-align: left;
+	width: 600px;
+	border-radius: 20px;
+}
+.super_realtor {
+	/*float: left;*/
+	position: relative;
+	width: 250px;
+	margin-left: 10px;
+	margin-bottom: 35px;
+	margin-top: 20px;
+	}
+
+.skills_background {
+	width: 700px;
+	height: 500px;
+	float: left;
+	margin-top: -15px;
+	margin-left: -25px;
+	background-position: center;
+}
+
+.creativity {
+	margin-left: 70px;
+	margin-top: -350px;
+
+}
+
+.communication {
+	margin-top: 100px;
+	margin-left: -55px;
+}
+
+.analysis {
+	position: relative;
+	margin-top: 300px;
+	margin-left: -110px;
+}
+
+
+h1,
+h2,
+h3	{
+	font-family: 'Sigmar One';
+	text-align: center;
+	}
+
+h1 {
+	margin-left: -75px
+}
+
+body {
+	background-color: #F8DFC9;
+	background-image: url(/img/subtlepattern.png);
+}
+
+/*.nav-pills {}*/
+
+.btn.btn-primary {
+	text-align: center;
+	background-color: transparent;
+	font-family: 'Sigmar One';
+	font-size: 24px;
+	color: black;
+	border: transparent;
+	outline:0;
+
+}
+
+.contact_button {
+	border: 0px solid ; width: 40px; height: 40px;
+}

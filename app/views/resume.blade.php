@@ -1,22 +1,17 @@
 @extends('layouts.master')
+{{-- example of top-script --}}
+@section('top-script')
+	<link rel="stylesheet" type="text/css" href="/css/resume.css">
 
+@stop
 @section('content')
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-    	<meta charset="utf-8">
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
     	<title>Resume Crystal Wyrick</title>
-    		<link rel="stylesheet" href="/codeup.dev/public/css/bootstrap.css">
-    		<link rel="stylesheet" href="codeup.dev/public/css/resume.css">
-    		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    		<link href='https://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
-			<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-			<script src="/js/bootstrap.js"></script>
-    </head>
+    		
+		
     <body>
     	<main>
+    		<h1>Let's play Roll Dice</h1>
+    		<a href="">Guess 1</a>
 	    	<div class="container">
 	    		<div class="row">
 				    <div class="col-md-4">
@@ -99,4 +94,7 @@
     	</main>
     </body>
 </html>
+{{-- example of bottom script --}}
+@section('bottom-script')
+	<script src="/js/resume.js"></script>
 @stop

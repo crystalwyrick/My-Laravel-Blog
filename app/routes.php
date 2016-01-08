@@ -11,45 +11,31 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'HomeController@showWelcome');
 
-// Route::get('/sayhello', function()
-// {
-//     return "Hello, Codeup!";
-// });
+Route::get('/sayhowdy/{name?}', 'HomeController@sayHowdy');
 
-Route::get('/sayhello/{name?}', function($name = '')
-{
-	if($name == '') {
-		return "Hello, web surfer!";
+Route::get('/resume', 'HomeController@resume');
+
+Route::get('/portfolio', 'HomeController@portfolio');
+
+Route::get('/sayhello/{name}', 'HomeController@sayHello($name)');
+
+Route::get('/roll-dice/{guess}', 'HomeController@rollDice');
+
+Route::resource('/posts', 'PostsController');
+
+Route::get('/test' function) {
+	// dd(Input::all());
+	// dd(Input::('today'));
+	if (Input::has('name')) {
+		dd('yes it exists');
+	} else {
+		dd('no it does not');
 	}
-	return "Howdy, $name!";
+	}
 });
 
-Route::get('/resume', function()
-{
-    return View::make('resume');
-});
-
-Route::get('/portfolio', function()
-{
-    return View::make('portfolio');
-});
-
-Route::get('/sayhello/{name}', function($name)
-{
-    return View::make('my-first-view');
-});
-
-Route::get('/roll-dice/{guess}', function($guess = null)
-{
-	$randnum = mt_rand(1,6);
-	$data = array('guess' => $guess, 'randnum' => $randnum);
-	return View::make('roll-dice')->with($data);
-});
 
 
 
