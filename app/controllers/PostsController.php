@@ -20,7 +20,7 @@ class PostsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return 'Show a form for creating a post';
+		return View::make('posts.create');
 	}
 
 
@@ -31,7 +31,17 @@ class PostsController extends \BaseController {
 	 */
 	public function store()
 	{
-		return 'Store the new post';
+		$post = new Post();
+		$post->title = Input::get('title');
+		$post->body = Input::get('body');
+
+		$result = $post->save();
+
+		if($result) {
+			return "Your post was saved!";
+		} else {
+			return Redirect::back();
+		}
 	}
 
 
@@ -44,7 +54,7 @@ class PostsController extends \BaseController {
 	public function show($id)
 	{
 		return 'Show a specific post';
-	}
+	} 
 
 
 	/**

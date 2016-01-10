@@ -5,7 +5,7 @@
 
 @stop
 @section('content')
-    	<title>Resume Crystal Wyrick</title>
+    <title>Resume Crystal Wyrick</title>
     		
 		
     <body>
