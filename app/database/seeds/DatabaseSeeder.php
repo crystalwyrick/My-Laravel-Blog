@@ -1,5 +1,8 @@
 <?php
 
+// database seeder is the main seeder -use it to call other seeders. 
+
+
 class DatabaseSeeder extends Seeder {
 
 	/**
@@ -7,11 +10,12 @@ class DatabaseSeeder extends Seeder {
 	 *
 	 * @return void
 	 */
-	public function run()
+	public function run() 
 	{
 		Eloquent::unguard();
 
 		$this->call('UserTableSeeder');
+		$this->call('PostTableSeeder');
 	}
 
 }

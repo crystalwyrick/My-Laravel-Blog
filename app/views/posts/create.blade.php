@@ -7,8 +7,12 @@
 	  <input type="text" name="title" class="form-control" id="usr" value="{{{ Input::old('title') }}}">
 	</div>
 	<div class="form-group">
+	  <label for="usr">Subtitle:</label>
+	  <input type="text" name="subtitle" class="form-control" id="usr" value="{{{ Input::old('subtitle') }}}">
+	</div>
+	<div class="form-group">
 	  <label for="comment">Body:</label>
-	  <textarea class="form-control" name="body" rows="10" id="comment">{{{ Input::old('body') }}}</textarea>
+	  <textarea class="form-control" name="content" rows="10" id="comment">{{{ Input::old('content') }}}</textarea>
 	</div>
   <button type="submit" class="btn btn-default">Submit</button>
 </form>

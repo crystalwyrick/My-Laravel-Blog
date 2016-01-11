@@ -15,7 +15,6 @@ class CreatePostsTable extends Migration {
 		Schema::create('posts', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->date('date');
 			$table->string('title');
 			$table->string('subtitle');
 			$table->text('content');
@@ -33,6 +32,11 @@ class CreatePostsTable extends Migration {
 	 */
 	public function down()
 	{
+		Schema::table('posts', function(Blueprint $table)
+		{
+			$table->dropForeign('posts_user_id_foreign');
+		});
+
 		Schema::drop('posts');
 	}
 

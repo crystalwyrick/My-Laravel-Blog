@@ -9,7 +9,8 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return 'Show a list of all posts';
+		$posts = Post::all();
+		return View::make('posts.index')->with('posts', $posts);
 	}
 
 
@@ -33,14 +34,16 @@ class PostsController extends \BaseController {
 	{
 		$post = new Post();
 		$post->title = Input::get('title');
-		$post->body = Input::get('body');
-
+		$post->subtitle = Input::get('subtitle');
+		$post->content = Input::get('content');
+		$post->image = 'image';
+		$post->user_id = 1;
 		$result = $post->save();
 
 		if($result) {
-			return "Your post was saved!";
+			return Redirect::action("PostsController@index");
 		} else {
-			return Redirect::back();
+			return Redirect::back()->withInput();
 		}
 	}
 
@@ -53,7 +56,8 @@ class PostsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		return 'Show a specific post';
+		$post = Post::find($id);
+		return View::make('posts.show')->with('post', $post);
 	} 
 
 
