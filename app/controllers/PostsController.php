@@ -9,7 +9,7 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$posts = Post::all();
+		$posts = Post::paginate(4);
 		return View::make('posts.index')->with('posts', $posts);
 	}
 
@@ -32,18 +32,31 @@ class PostsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$post = new Post();
-		$post->title = Input::get('title');
-		$post->subtitle = Input::get('subtitle');
-		$post->content = Input::get('content');
-		$post->image = 'image';
-		$post->user_id = 1;
-		$result = $post->save();
+    	// create the validator
+    	$validator = Validator::make(Input::all(), Post::$rules);
 
-		if($result) {
-			return Redirect::action("PostsController@index");
-		} else {
-			return Redirect::back()->withInput();
+    	// attempt validation
+    	if ($validator->fails()) {
+
+    		return Redirect::back()->withInput()->withErrors($validator);
+       		// validation failed, redirect to the post create page with validation errors and old inputs
+    	} else {
+        // validation succeeded, create and save the post
+    	}
+
+
+			$post = new Post();
+			$post->title = Input::get('title');
+			$post->subtitle = Input::get('subtitle');
+			$post->content = Input::get('content');
+			$post->image = 'image';
+			$post->user_id = 1;
+			$result = $post->save();
+
+			if($result) {
+				return Redirect::action("PostsController@index");
+			} else {
+				return Redirect::back()->withInput();
 		}
 	}
 
@@ -69,7 +82,8 @@ class PostsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		return 'Show a form for editing a specific post';
+		$post = Post::find($id);
+		return View::make('posts.edit')->with('post', $post);
 	}
 
 
@@ -81,7 +95,32 @@ class PostsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		return 'Update a specific post';
+    	// create the validator
+    	$validator = Validator::make(Input::all(), Post::$rules);
+
+    	// attempt validation
+    	if ($validator->fails()) {
+
+    		return Redirect::back()->withInput()->withErrors($validator);
+       		// validation failed, redirect to the post create page with validation errors and old inputs
+    	} else {
+        // validation succeeded, create and save the post
+    	}
+
+
+			$post = Post::find($id);
+			$post->title = Input::get('title');
+			$post->subtitle = Input::get('subtitle');
+			$post->content = Input::get('content');
+			$post->image = 'image';
+			$post->user_id = 1;
+			$result = $post->save();
+
+			if($result) {
+				return Redirect::action("PostsController@index");
+			} else {
+				return Redirect::back()->withInput();
+		}
 	}
 
 

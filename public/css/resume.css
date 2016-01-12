@@ -52,18 +52,18 @@
 
 h1,
 h2,
-h3	{
+h3,
+p	{
 	font-family: 'Sigmar One';
 	text-align: center;
 	}
 
-h1 {
+/*h1 {
 	margin-left: -75px
-}
+}*/
 
 body {
 	background-color: #F8DFC9;
-	background-image: url(/img/subtlepattern.png);
 }
 
 /*.nav-pills {}*/

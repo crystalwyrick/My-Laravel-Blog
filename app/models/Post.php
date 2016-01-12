@@ -4,7 +4,16 @@ class Post extends Eloquent
 {
     protected $table = 'posts';
 
-    // this needs to be modified to match my database columns:
-    // protected $fillable = array('title', 'body')
+  
+    protected $fillable = array('title', 'subtitle', 'content', 'image');
+
+    public static $rules = array(
+    'title'      => 'required|max:100',
+    'subtitle'   => 'required|max:300',
+    'content'    => 'required|max:10000',
+    'image'      => 'image'
+	);
 }
+
+
 
