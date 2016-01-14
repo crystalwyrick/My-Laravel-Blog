@@ -1,6 +1,8 @@
 <?php
 
-class Post extends Eloquent
+use Carbon\Carbon;
+
+class Post extends BaseModel
 {
     protected $table = 'posts';
 
@@ -13,6 +15,19 @@ class Post extends Eloquent
     'content'    => 'required|max:10000',
     'image'      => 'image'
 	);
+
+	public function getCreatedAtAttribute($value)
+	{
+		$utc = Carbon::createFromFormat($this->getDateFormat(), $value);
+    	return $utc->setTimezone('America/Chicago');
+	}
+
+	public function setTitleAttribute($value)
+	{
+		$this->attributes['title'] = $value;
+		// youcan use this for catgories that to not appear in the db, ie slugs
+		$this->attributes['slug'] = Str::slug($value);
+	}
 }
 
 

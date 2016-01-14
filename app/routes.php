@@ -58,6 +58,18 @@ Route::get('orm-test', function() {
 
 });
 
+Route::get('/session/{value}', function($value)
+	{
+	if(Session::has('some-key')) {
+			echo Session::get('some-key');
+	}
+});
+
+Route::get('/session/', function()
+	{
+	return Session::all();
+	});
+
 
 // this is useful for testing inputs in the URL:
 // Route::get('/test', function() {

@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/css/resume.css">
+	{{-- <link rel="stylesheet" href="/css/resume.css"> --}}
 	<link rel="stylesheet" href="/css/startbootstrap-agency-1.0.6/css/agency.css">
 	<link href="/css/startbootstrap-agency-1.0.6/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -24,6 +24,14 @@
 </head>
 <body>
 	{{-- @include('partials.navbar') --}}
+
+	@if (Session::has('successMessage'))
+    <div class="alert alert-success">{{{ Session::get('successMessage') }}}</div>
+	@endif
+	@if (Session::has('errorMessage'))
+    <div class="alert alert-danger">{{{ Session::get('errorMessage') }}}</div>
+	@endif
+	
 	<div class="container">
 	@yield('content')
 	</div>

@@ -2,8 +2,8 @@
 
 @section('content')
 
-	{{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'PUT')) }}
 
+	{{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'PUT')) }}
 		<div class="form-group {{ ($errors->has('title')) ? 'has-error' : ''}}">
 			{{ Form::label('title', 'Title') }}
 			{{ Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Enter your blog title']) }}
@@ -19,7 +19,12 @@
 			{{ Form::textarea('content', null, ['class' => 'form-control', 'placeholder' => 'Enter your content']) }}
 		</div>
 
-	  	<button type="submit" class="btn btn-default">Submit</button>
+	  	<button type="submit" class="btn btn-default">Submit Changes</button>
 	{{ Form::close() }}
 
+	{{ Form::model($post, array('action' => array('PostsController@destroy', $post->id), 'method' => 'DELETE')) }}
+		<button class="btn btn-danger">Delete Post</button>
+	{{ Form::close() }}
+
+	
 @stop
