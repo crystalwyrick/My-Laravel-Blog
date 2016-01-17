@@ -1,3 +1,21 @@
 .nav {
 	height: 50px;
 }
+.icon-color {
+	color: #372925;
+}
+.footer {
+	color: white;
+	text-align: center;
+	font-family: helvetica;
+	
+}
+.tag-line {
+	font-size: 42px;
+	font-style: italic;
+	font-weight: bold;
+	padding-top: 50px;
+}
+.blog-nav {
+	height:75px;
+}
