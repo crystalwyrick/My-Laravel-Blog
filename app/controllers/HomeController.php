@@ -36,6 +36,10 @@ class HomeController extends BaseController {
 	{
 		return View::make('portfolio');
 	}
+	public function home()
+	{
+		return View::make('home');
+	}
 	
 	public function sayHello($name)
 	{
@@ -48,4 +52,32 @@ class HomeController extends BaseController {
 		$data = array('guess' => $guess, 'randnum' => $randnum);
 		return View::make('roll-dice')->with($data);
 	}
+
+	public function getLogin()
+	{
+		return View::make('login');
+	}
+
+	public function postLogin()
+	{
+		$email 		= Input::get('email');
+		$password 	= Input::get('password');
+		if (Auth::attempt(array('email' => $email, 'password' => $password))) {
+    		return Redirect::intended('/');
+		} else {
+    		// login failed, go back to the login screen
+    		Session::flash('errorMessage', 'Login Failed!');
+    		return Redirect::back()->withInput();
+}
+	}
+	public function getLogout()
+	{
+		Auth::logout();
+		return Redirect::action('HomeController@showWelcome');
+	}
+
+
+
+
+
 }
