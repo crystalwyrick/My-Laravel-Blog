@@ -11,8 +11,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
-	{{-- <link rel="stylesheet" href="/css/resume.css"> --}}
-	<link rel="stylesheet" href="/css/startbootstrap-agency-1.0.6/css/agency.css">
+	<link rel="stylesheet" href="/css/blog.css">
+	<link rel="stylesheet" href="/css/startbootstrap-business-casual-1.0.4/css/business-casual.css">
 	<link href="/css/startbootstrap-agency-1.0.6/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css">
@@ -23,7 +23,8 @@
 	@yield('top-script')
 </head>
 <body>
-	{{-- @include('partials.navbar') --}}
+	@include('partials.navbar')
+	@yield('content')
 
 	@if (Session::has('successMessage'))
     <div class="alert alert-success">{{{ Session::get('successMessage') }}}</div>
@@ -33,13 +34,13 @@
 	@endif
 	
 	<div class="container">
-	@yield('content')
 	</div>
 	{{--script tags for JQuery and Bootstrap--}}
 
 {{-- loads javascript last, after jquery and bootstrap --}}
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="/js/bootstrap.js"></script>
+	@include('partials.footer')
 	@yield('bottom-script')
 </body>
 </html>
