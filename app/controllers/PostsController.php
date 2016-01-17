@@ -1,7 +1,16 @@
 <?php
 
 class PostsController extends \BaseController {
+	public function __construct()
+	{
+		// avoid overriding the function in your BaseController:
+		parent::__construct();
 
+		// $this->beforeFilter('auth', array('only' => array('create', 'store',)));
+		// OR:
+		$this->beforeFilter('auth', array('except' => array('index', 'show',)));
+		// better because the list is shorter
+	}
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -9,13 +18,27 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		Log::info('This is some useful information.');
+		$query = Post::with('user');
 
-		Log::warning('Something could be going wrong.');
+		if (Input::has('search')) {
+			$search = Input::get('search');
+			$query->where('title', 'like', "%{search}")->orWhere('content', 'like', "%{search}%");
+		}
 
-		Log::error('Something is really going wrong.');
-		$posts = Post::paginate(4);
+		$query->orderBy('created_at', 'desc');
+		// gives us back a collection - eloquent collection
+		// $posts = Post::all();
+
+		// gives us a a pagination collection:
+		// $posts = Post::paginate(4);
+
+		// gives us back a builder collection:
+		$posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(4);
+
 		return View::make('posts.index')->with('posts', $posts);
+
+		// ****add search box****
+
 	}
 
 
@@ -56,6 +79,7 @@ class PostsController extends \BaseController {
 	public function store()
 	{
     	$post = new Post();
+    	$post->user_id = Auth::id();
     	Log::info('This is useful info', Input::all());
     	return $this->validateAndSave($post);
 	}
@@ -117,7 +141,7 @@ class PostsController extends \BaseController {
 		$post->subtitle = Input::get('subtitle');
 		$post->content = Input::get('content');
 		$post->image = 'image';
-		$post->user_id = 1;
+		// set up user email? 
 		$result = $post->save();
 
 		if($result) {
