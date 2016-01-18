@@ -19,3 +19,11 @@
 .blog-nav {
 	height:75px;
 }
+.delete-button {
+	position: absolute;
+	left: 200px;
+	margin-top: -35px;
+}
+a {
+	color:#372925;
+}
