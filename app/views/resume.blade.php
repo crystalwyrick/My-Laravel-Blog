@@ -1,100 +1,39 @@
 @extends('layouts.master')
-{{-- example of top-script --}}
-@section('top-script')
-	<link rel="stylesheet" type="text/css" href="/css/resume.css">
 
-@stop
 @section('content')
     <title>Resume Crystal Wyrick</title>
     		
 		
-    <body>
-    	<main>
-    		<h1>Let's play Roll Dice</h1>
-    		<a href="">Guess 1</a>
-	    	<div class="container">
-	    		<div class="row">
-				    <div class="col-md-4">
-				  		<h1>Crystal Wyrick</h1>
-					 	<img class="super_realtor" style="border:12px solid black" src="/img/super_realtor.jpg" align="middle";>
-						<div> 	
-							<a href="https://www.facebook.com/TeamCrystal" target="_blank">
-								<img style="contact_button" alt="Facebook" src="/img/fb.jpg">
-							</a>
-							<a href="ttps://twitter.com/crystalwyrick" target="_blank">
-								<img style="contact_button" alt="Twitter" src="/img/tw.jpg">
-							</a> 
-							<a href="http://www.linkedin.com/pub/crystal-wyrick/b/703/806" target="_blank">
-								<img style="contact_button" alt="LinkedIn" src="/img/li.jpg">
-							</a>
-							<a href="mailto:crystalwyrick@kw.com">
-								<img style="contact_button" alt="Email Me" src="/img/ma.jpg">
-							</a>
-						</div>
-				  	</div>  
-				  	<div class="col-md-8">
-				  		<h1>Skills</h1>
-				  	
-				  			<div class="col-md-4">
-				  				<img class="skills_background" src="/img/primary_circles.jpg">
-						  		<div>
-						  			<button class="btn btn-primary creativity" data-toggle="collapse" href="#creativity" aria-expanded="false" aria-controls="collapseExample">Creativity</button>
-									<div class="collapse" id="creativity">
-				                        <div class="well">
-				                         	<ul>
-									  			<li>kjaksfkjlkjdlkjkkkskldjjfiowefoiwjeoisjd</li>
-									  			<li>jfjsahfjosjfkljkfljdfiwiofjoifdfjd</li>
-												<li>ncudskdlfjisjfsjflksjflksjflisdshfbd</li>
-												<li>kksjslkdfjksjflksjfklsjklfjsdklsiwn</li>
-									  		</ul>
-				                        </div>
-				                    </div>
-				                </div>
-				            </div>
-				            <div class="col-md-4">
-						  		<div>
-						  			<button class="btn btn-primary communication" data-toggle="collapse" href="#communication" aria-expanded="false" aria-controls="collapseExample">Communication</button>
-									<div class="collapse collapse_communication" id="communication">
-				                        <div class="well">
-				                         	<ul>
-									  			<li>xxxxxxxxx</li>
-									  			<li>jfjsahfjd</li>
-												<li>ncudhfbd</li>
-												<li>kksjsiwn</li>
-									  		</ul>
-				                        </div>
-				                    </div>
-				                </div>
-				            </div>
-				            <div class="col-md-4">
-						  		<div>
-						  			<button class="btn btn-primary analysis" data-toggle="collapse" href="#analysis" aria-expanded="false" aria-controls="collapseExample">Analysis</button>
-									<div class="collapse" id="analysis">
-				                        <div class="well">
-				                         	<ul>
-									  			<li>kooooooooo</li>
-									  			<li>jfjsahfjd</li>
-												<li>ncudhfbd</li>
-												<li>kksjsiwn</li>
-									  		</ul>
-				                        </div>
-				                    </div>
-				                </div>
-				            </div>
-				  		</div>
-				 	</div>
-				</div>
-			</div>
-					
-					<!-- use bootstap hidden classes ie hidden-sm -->
-				  
-				
-	    <!-- Stack the columns on mobile by making one full-width and the other half-width -->
-			
-    	</main>
-    </body>
-</html>
-{{-- example of bottom script --}}
-@section('bottom-script')
-	<script src="/js/resume.js"></script>
+
+    	<div class="box">
+        	<h3>Objective</h3>
+				<p>Seasoned professional seeking to contribute 20+ years of client-focused business development experience and programming skills in a production environment that promotes teamwork and fosters innovation.</p>
+				<br>
+			<h3>Skills</h3>
+				<p>LAMP stack (Linux, Apache, MySQL, PHP), HTML/CSS, JavaScript, jQuery, Laravel MVC, Vagrant development environment, Sequel Pro, version control using Git and Github, and Twitter Bootstrap.</p>
+				<br>
+			<h3>Education</h3>
+				<h4>Codeup | Sept 2015 - present</h4>
+					<p>Intensive 16-week boot camp focused on full stack web development and problem solving.</p>
+				<h4>University of Texas, San Antonio | BA: Geography</h4>
+					<p>Recipient: Mastoris Scholarship; President: Geography Society; Other areas of study: Accounting, Economics, Finance.</p>
+				<br>
+			<h3>Web Development</h3>
+				<h4>Laravel Blog Project | January 2016</h4>
+					<p>Web application combining blog functionality, portfolio and online resume. Built using Laravel, PHP, MySQL, JavaScript, jQuery and Twitter Bootstrap. Developed in a Vagrant environment using Git and GitHub version control.</p>
+				<h4>Adlister Project | December 2015</h4>
+					<p>Team project creating a Craigslist-type website using PHP, MySQL, JavaScript, jQuery, HTML/CSS, Twitter Bootstrap. Team members coordinated the production and utilized Git and GitHub version control.</p>
+				<h4>Whackamole Project | October 2015</h4>
+					<p>Online recreation of the arcade favorite using using PHP, JavaScript, jQuery and HTML/ CSS.</p>
+				<br>
+			<h3>Experience</h3>	
+				<h4>Realtor - Keller Williams Legacy, San Antonio | 2005 - present</h4>
+					<p>Consistently maintained 94% closing rate throughout 10-year career despite the ups and downs of the market, including the mortgage loan crisis of 2009. Created a systematic marketing plan and contact management program to ensure a steady pipeline of business. Produced analytical tools for use in advising real estate investors on purchases.</p>
+				<h4>Corporate Relations Associate - Texas Public Radio, San Antonio | 2012 - 2014</h4>
+					<p>Quickly mastered the mechanics and language of media marketing (a new subject) in order to keep a pipeline of existing business on track. Built tools to be used by the sales team for goal setting, production tracking and contact management.</p>
+				<h4>Investment Services Representative - USAA, San Antonio | 2010 - 2012</h4>
+					<p>Achieved strong scores on challenging FINRA licensing exams required for the position. Employed communication skills and investment knowledge to educate and advise members on their financial matters.</p>
+    	</div>
+
+	
 @stop
