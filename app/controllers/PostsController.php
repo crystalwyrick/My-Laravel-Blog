@@ -33,7 +33,7 @@ class PostsController extends \BaseController {
 		// $posts = Post::paginate(4);
 
 		// gives us back a builder collection:
-		$posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(4);
+		$posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(3);
 
 		return View::make('posts.index')->with('posts', $posts);
 
@@ -68,6 +68,11 @@ class PostsController extends \BaseController {
 			App::abort(404);
 		}
 		return View::make('posts.show')->with('post', $post);
+
+		$next = User::where('id', '>', $post->id)->min('id');
+
+		return View::make('posts.show')->with('previous', $previous)->with('next', $next);
+
 	} 
 
 
