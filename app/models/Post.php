@@ -26,7 +26,12 @@ class Post extends BaseModel
 	{
 		$this->attributes['title'] = $value;
 		// youcan use this for catgories that to not appear in the db, ie slugs
-		$this->attributes['slug'] = Str::slug($value);
+		$this->attributes['slug'] = uniqid() . '-' . Str::slug($value);
+	}
+
+	public function user()
+	{
+		return $this->belongsTo('User');
 	}
 }
 

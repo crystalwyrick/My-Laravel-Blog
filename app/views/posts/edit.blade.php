@@ -23,7 +23,7 @@
 	{{ Form::close() }}
 
 	{{ Form::model($post, array('action' => array('PostsController@destroy', $post->id), 'method' => 'DELETE')) }}
-		<button class="btn btn-danger">Delete Post</button>
+		<button class="delete-button btn btn-danger">Delete Post</button>
 	{{ Form::close() }}
 
 	

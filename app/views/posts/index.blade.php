@@ -9,7 +9,7 @@
     <div class="col-lg-12">
         <hr>
         <h2 class="intro-text text-center">
-        	<a href="{{{ action('PostsController@show', $post->id) }}}">{{{ $post->title }}}: {{{ $post->sub_title }}}</a>
+        	<a href="{{{ action('PostsController@show', $post->id) }}}">~ {{{ $post->title }}} ~{{{ $post->sub_title }}}</a>
         	<a href="{{{ action('PostsController@show', $post->id) }}}">{{{ $post->sub_title }}}</a>
         </h2>
         <hr>
@@ -31,6 +31,7 @@
 		</ul>
 	</div> --}}
 </div>
+
 	{{ $posts->links() }}
 
 

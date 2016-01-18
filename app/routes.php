@@ -23,7 +23,14 @@ Route::get('/sayhello/{name}', 'HomeController@sayHello($name)');
 
 Route::get('/roll-dice/{guess}', 'HomeController@rollDice');
 
+Route::get('login', 'HomeController@getLogin');
+Route::post('login', 'HomeController@postLogin');
+Route::get('logout', 'HomeController@getLogout');
+
+
 Route::resource('/posts', 'PostsController');
+
+Route::resource('tags', 'TagsController');
 
 // different ways to interact with the database:
 Route::get('orm-test', function() {
