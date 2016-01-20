@@ -19,7 +19,7 @@
    {{--  <div class="col-lg-12 text-center">
         <a href="#" class="btn btn-default btn-lg">Read More</a>               
     </div> --}}
-	@endforeach
+	{{-- @endforeach --}}
 
               
    {{--  <div class="col-lg-12 text-center">
@@ -30,6 +30,7 @@
 			</li>
 		</ul>
 	</div> --}}
+	@endforeach
 </div>
 
 	{{ $posts->links() }}
